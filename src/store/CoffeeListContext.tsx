@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { CoffeeList, Coffee } from "../types";
 import {
   getCoffeeList,
@@ -12,7 +12,7 @@ export const CoffeeListContext = React.createContext<any | null>(null);
 const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [coffeeList, setCoffeeList] = useState<CoffeeList[]>([]);
   const [selectedCoffee, setSelectedCoffee] = useState<Coffee | any>(null);
-
+  const firstRender = useRef(true);
   useEffect(() => {
     const unsubscribe = getCoffeeList({
       next: (querySnapshot: any) => {
@@ -44,6 +44,11 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
           },
         ];
         setCoffeeList(groupedOptions);
+        if (firstRender.current) {
+          console.log("FIRDT");
+          firstRender.current = false;
+          setSelectedCoffee(groupedOptions[0].options[0]);
+        }
       },
       error: () => console.log("item-get-fail"),
     });

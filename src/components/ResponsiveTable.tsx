@@ -11,6 +11,14 @@ interface ITable {
 const ResponsiveTable: React.FC<ITable> = ({ className, onCloseClick }) => {
   const { coffeeList } = React.useContext(CoffeeListContext);
 
+  const reformatSetting = (number: number) => {
+    //example: 6 -> 2.2
+    let beforeDecimal = Math.ceil(number / 3);
+    let afterDecimal = number % 3;
+    afterDecimal = afterDecimal === 0 ? 2 : afterDecimal - 1;
+    return `${beforeDecimal}.${afterDecimal}`;
+  };
+
   const populateTable = () => {
     let listJSX: any = [];
     coffeeList.forEach((list: CoffeeList) => {
@@ -18,8 +26,8 @@ const ResponsiveTable: React.FC<ITable> = ({ className, onCloseClick }) => {
         listJSX.push(
           <Tr key={coffee.value}>
             <Td>{coffee.label}</Td>
-            <Td>{coffee.v60_setting}</Td>
-            <Td>{coffee.aeropress_setting}</Td>
+            <Td>{reformatSetting(coffee.v60_setting)}</Td>
+            <Td>{reformatSetting(coffee.aeropress_setting)}</Td>
             <Td>{coffee.tasting_notes}</Td>
           </Tr>
         );

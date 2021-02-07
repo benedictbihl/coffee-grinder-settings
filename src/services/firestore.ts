@@ -30,8 +30,8 @@ export const createCoffee = (name:  string) =>  {
   db.collection("coffee").doc(name).set({
     value: name,
     label: name,
-    v60_setting: 0,
-    aeropress_setting: 0,
+    v60_setting: 1,
+    aeropress_setting: 1,
     available_at_home: true,
     tasting_notes: "",
   })

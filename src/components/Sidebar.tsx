@@ -25,12 +25,13 @@ const Sidebar: React.FC<ISideBar> = ({
       <div>
         <img
           onClick={() => onInfoClick()}
-          className="mb-6"
+          className="mb-6 cursor-pointer"
           alt="tasting notes"
           src="/icon/info.svg"
         />
         <img
           onClick={() => onTableClick()}
+          className="cursor-pointer"
           alt="all coffees"
           src="/icon/database.svg"
         />
