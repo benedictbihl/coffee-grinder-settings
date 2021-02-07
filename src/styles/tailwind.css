@@ -22,12 +22,24 @@
 .styled-save-btn {
   transform: translateY(-200%);
   transition: transform 0.3s ease-out;
-  @apply absolute bg-blue-700 text-white uppercase w-auto p-3 align-middle z-50 top-0 rounded-full mt-4 shadow-lg border-transparent border-2 hover:border-white;
+  @apply absolute bg-blue-700 text-white uppercase w-auto p-3 align-middle z-40 top-0 rounded-full mt-4 shadow-lg border-transparent border-2 hover:border-white;
 }
 
 .styled-save-btn-visible {
   transform: translateY(0);
   transition: transform 0.5 ease-out;
+}
+
+.styled-submit-btn {
+  @apply bg-blue-700 text-white w-1/2 uppercase mx-auto p-3 align-middle rounded-full mt-4 shadow-lg border-transparent border-2 hover:border-white;
+}
+
+.styled-table {
+  @apply absolute z-50 h-screen w-screen px-4 text-gray-900;
+}
+
+.styled-tasting-notes {
+  @apply absolute z-50 h-screen w-screen px-4 text-gray-900;
 }
 /* Start purging... */
 @tailwind utilities;

@@ -4,9 +4,16 @@ import { useSwipeable } from "react-swipeable";
 interface IGrinder {
   grindSetting: number;
   onSwiping: (eventData: any) => void;
+  onPlusClick: () => void;
+  onMinusClick: () => void;
 }
 
-const Grinder: React.FC<IGrinder> = ({ grindSetting, onSwiping }) => {
+const Grinder: React.FC<IGrinder> = ({
+  grindSetting,
+  onSwiping,
+  onMinusClick,
+  onPlusClick,
+}) => {
   const [rotation, setRotation] = useState(-80 + grindSetting * 9);
   useEffect(() => {
     setRotation(-80 + grindSetting * 9);
@@ -47,6 +54,20 @@ const Grinder: React.FC<IGrinder> = ({ grindSetting, onSwiping }) => {
         alt="fellow ode coffee grinder dial"
         src="/img/ode_dial.png"
       />
+      <div style={{ top: "71.5%" }} className="absolute flex cursor-pointer">
+        <img
+          onClick={() => onMinusClick()}
+          className="p-3"
+          alt="plus button"
+          src="/icon/minus.svg"
+        />
+        <img
+          onClick={() => onPlusClick()}
+          className="p-3"
+          alt="minus button"
+          src="/icon/plus.svg"
+        />
+      </div>
     </div>
   );
 };

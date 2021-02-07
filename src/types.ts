@@ -3,7 +3,8 @@ export type Coffee = {
   label: string,
   v60_setting: number,
   aeropress_setting: number,
-  available_at_home: boolean
+  available_at_home: boolean,
+  tasting_notes: string
 }
 
 export type CoffeeList = { label: string; options: Coffee[] }

@@ -26,19 +26,33 @@ const Main = () => {
         currentSetting < 30
       ) {
         setCurrentSetting(currentSetting + 1);
-        setSaveBtnVisible(true);
+        selectedCoffee && setSaveBtnVisible(true);
       } else if (
         eventData.dir === "Left" &&
         !eventData.first &&
         currentSetting > 0
       ) {
         setCurrentSetting(currentSetting - 1);
-        setSaveBtnVisible(true);
+        selectedCoffee && setSaveBtnVisible(true);
       }
     },
     100,
     { leading: false }
   );
+
+  const handleGrinderButtonClick = (direction: "plus" | "minus") => {
+    let currentSetting =
+      brewMethod === "V60" ? grindSetting_V60 : grindSetting_Aeropress;
+    let setCurrentSetting =
+      brewMethod === "V60" ? setGrindSetting_V60 : setGrindSetting_Aeropress;
+    if (direction === "minus" && currentSetting > 0) {
+      setCurrentSetting(currentSetting - 1);
+      selectedCoffee && setSaveBtnVisible(true);
+    } else if (direction === "plus" && currentSetting < 30) {
+      setCurrentSetting(currentSetting + 1);
+      selectedCoffee && setSaveBtnVisible(true);
+    }
+  };
 
   const saveChanges = () => {
     setSaveBtnVisible(false);
@@ -79,6 +93,8 @@ const Main = () => {
         SAVE CHANGES
       </button>
       <Grinder
+        onPlusClick={() => handleGrinderButtonClick("plus")}
+        onMinusClick={() => handleGrinderButtonClick("minus")}
         onSwiping={(eventData) => handleGrindSettingsChange(eventData)}
         grindSetting={
           brewMethod === "V60" ? grindSetting_V60 : grindSetting_Aeropress

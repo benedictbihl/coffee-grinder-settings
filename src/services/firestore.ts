@@ -22,12 +22,17 @@ export const updateCoffee = (name: string, fields: any) => {
   db.collection("coffee").doc(name).update({...fields})
 }
 
+export const updateTastingNotes = (name: string, tasting_notes: string) => {
+  db.collection("coffee").doc(name).update({tasting_notes: tasting_notes})
+}
+
 export const createCoffee = (name:  string) =>  {
   db.collection("coffee").doc(name).set({
     value: name,
     label: name,
     v60_setting: 0,
     aeropress_setting: 0,
-    available_at_home: true
+    available_at_home: true,
+    tasting_notes: "",
   })
 }

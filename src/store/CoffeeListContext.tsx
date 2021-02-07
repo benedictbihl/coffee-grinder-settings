@@ -4,6 +4,7 @@ import {
   getCoffeeList,
   createCoffee,
   updateCoffee,
+  updateTastingNotes,
 } from "../services/firestore";
 
 export const CoffeeListContext = React.createContext<any | null>(null);
@@ -57,6 +58,9 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
     updateCoffee(name, { ...fields });
   };
 
+  const setTastingNotes = (name: string, notes: string) => {
+    updateTastingNotes(name, notes);
+  };
   return (
     <CoffeeListContext.Provider
       value={{
@@ -65,6 +69,7 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
         setSelectedCoffee,
         saveCoffee,
         setCoffee,
+        setTastingNotes,
       }}
     >
       {children}
