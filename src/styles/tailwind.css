@@ -1,0 +1,36 @@
+@tailwind base;
+
+/* Your own custom base styles */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Your own custom component styles */
+
+.styled-brewing-icon {
+  width: 50%;
+  padding: 7px 4px 0px 4px;
+  border: 2px transparent solid;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.styled-brewing-icon-active {
+  border-color: #000;
+}
+
+.styled-save-btn {
+  transform: translateY(-200%);
+  transition: transform 0.3s ease-out;
+  @apply absolute bg-blue-700 text-white uppercase w-auto p-3 align-middle z-50 top-0 rounded-full mt-4 shadow-lg border-transparent border-2 hover:border-white;
+}
+
+.styled-save-btn-visible {
+  transform: translateY(0);
+  transition: transform 0.5 ease-out;
+}
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
