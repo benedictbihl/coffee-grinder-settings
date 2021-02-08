@@ -6,9 +6,9 @@ import "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDiSx2g1kzwaqy4PZDPL0PxpD3yYGLzxUg",
-  authDomain: "coffee-grinder-settings.firebaseapp.com",
-  projectId: "coffee-grinder-settings"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID
 };
 
 firebase.initializeApp(firebaseConfig);
