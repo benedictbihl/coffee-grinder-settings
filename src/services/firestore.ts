@@ -4,10 +4,11 @@ import firebase from 'firebase/app'
 import "firebase/firestore";
 import "firebase/auth";
 
+
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID
+  apiKey: "AIzaSyDiSx2g1kzwaqy4PZDPL0PxpD3yYGLzxUg",
+  authDomain: "coffee-grinder-settings.firebaseapp.com",
+  projectId: "coffee-grinder-settings"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -24,6 +25,10 @@ export const updateCoffee = (name: string, fields: any) => {
 
 export const updateTastingNotes = (name: string, tasting_notes: string) => {
   db.collection("coffee").doc(name).update({tasting_notes: tasting_notes})
+}
+
+export const removeCoffee = (name: string, cb: Dispatch<void>) => {
+  db.collection("coffee").doc(name).delete().then(() => cb(null))
 }
 
 export const createCoffee = (name:  string) =>  {
