@@ -5,6 +5,7 @@ import {
   createCoffee,
   updateCoffee,
   updateTastingNotes,
+  removeCoffee,
 } from "../services/firestore";
 
 export const CoffeeListContext = React.createContext<any | null>(null);
@@ -45,7 +46,6 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
         ];
         setCoffeeList(groupedOptions);
         if (firstRender.current) {
-          console.log("FIRDT");
           firstRender.current = false;
           setSelectedCoffee(groupedOptions[0].options[0]);
         }
@@ -57,6 +57,10 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
 
   const saveCoffee = (name: string) => {
     createCoffee(name);
+  };
+
+  const deleteCoffee = (name: string) => {
+    removeCoffee(name, setSelectedCoffee);
   };
 
   const setCoffee = (name: string, fields: any) => {
@@ -75,6 +79,7 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
         saveCoffee,
         setCoffee,
         setTastingNotes,
+        deleteCoffee,
       }}
     >
       {children}

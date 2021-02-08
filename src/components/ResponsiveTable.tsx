@@ -13,7 +13,6 @@ const ResponsiveTable: React.FC<ITable> = ({ className, onCloseClick }) => {
 
   const reformatSetting = (number: number) => {
     //example: 6 -> 2.2
-    console.log(number);
     let beforeDecimal = Math.ceil(number / 3);
     let afterDecimal = number % 3;
     if (afterDecimal === 0) beforeDecimal += 1;

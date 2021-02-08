@@ -7,6 +7,7 @@ import firebase from "firebase/app";
 import Sidebar from "./components/Sidebar";
 import ResponsiveTable from "./components/ResponsiveTable";
 import TastingNotes from "./components/TastingNotes";
+import RemoveSettingPrompt from "./components/RemoveSettingPrompt";
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -20,6 +21,7 @@ const uiConfig = {
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(true); //assume true
   const [showTable, setShowTable] = useState(false);
+  const [showRemovePrompt, setShowRemovePrompt] = useState(false);
   const [showTastingNotes, setShowTastingNotes] = useState(false);
   useEffect(() => {
     const unregisterAuthObserver = firebase
@@ -47,10 +49,17 @@ function App() {
         <Sidebar
           onInfoClick={() => setShowTastingNotes(true)}
           onTableClick={() => setShowTable(true)}
+          onRemoveClick={() => setShowRemovePrompt(true)}
           onSignOutClick={() => {
             firebase.auth().signOut();
           }}
           className="absolute h-1/2 right-0 top-0 mr-2 mt-6 flex flex-col justify-between z-30"
+        />
+        <RemoveSettingPrompt
+          onCloseClick={() => setShowRemovePrompt(false)}
+          className={`styled-tasting-notes ${
+            showRemovePrompt ? "block" : "hidden"
+          }`}
         />
         <TastingNotes
           onCloseClick={() => setShowTastingNotes(false)}

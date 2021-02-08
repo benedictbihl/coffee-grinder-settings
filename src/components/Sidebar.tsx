@@ -5,12 +5,14 @@ interface ISideBar {
   onSignOutClick: () => void;
   onInfoClick: () => void;
   onTableClick: () => void;
+  onRemoveClick: () => void;
 }
 const Sidebar: React.FC<ISideBar> = ({
   className,
   onSignOutClick,
   onInfoClick,
   onTableClick,
+  onRemoveClick
 }) => {
   return (
     <div className={className}>
@@ -23,6 +25,12 @@ const Sidebar: React.FC<ISideBar> = ({
         />
       </div>
       <div>
+        <img
+          onClick={() => onRemoveClick()}
+          className="mb-6 cursor-pointer"
+          alt="tasting notes"
+          src="/icon/trash.svg"
+        />
         <img
           onClick={() => onInfoClick()}
           className="mb-6 cursor-pointer"

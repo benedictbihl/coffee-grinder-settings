@@ -65,7 +65,6 @@ const Main = () => {
 
   useEffect(() => {
     if (selectedCoffee) {
-      console.log(selectedCoffee);
       setAvailableAtHome(selectedCoffee.available_at_home);
       setGrindSetting_V60(selectedCoffee.v60_setting);
       setGrindSetting_Aeropress(selectedCoffee.aeropress_setting);
