@@ -19,8 +19,8 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
       next: (querySnapshot: any) => {
         let coffeesAtHome: any[] = [];
         let coffeesUnavailable: any[] = [];
-        const coffeeList = querySnapshot.docs.map((docSnapshot: any) =>{
-          return { ...docSnapshot.data(), id: docSnapshot.id } 
+        const coffeeList = querySnapshot.docs.map((docSnapshot: any) => {
+          return { ...docSnapshot.data(), id: docSnapshot.id };
         });
         coffeeList.forEach((doc: Coffee) => {
           if (doc.available_at_home === true) {
