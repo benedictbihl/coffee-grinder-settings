@@ -8,6 +8,84 @@
 
 /* Your own custom component styles */
 
+/* Animated Checkbutton START 
+   Keyframe Animations declared in tailwind config 
+*/
+.toggleButton {
+  transform-style: preserve-3d;
+  transition: transform 0.14s ease;
+  @apply cursor-pointer origin-center flex items-center
+}
+.toggleButton:active {
+  transform: rotateX(30deg);
+}
+.toggleButton input {
+  @apply hidden
+}
+.toggleButton input + div {
+  border: 3px solid rgba(0, 0, 0, .2);
+  width: 44px;
+  height: 44px;
+  @apply relative rounded-full
+}
+.toggleButton input + div svg {
+  fill: none;
+  stroke-width: 3.6;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 44px;
+  height: 44px;
+  left: -3px;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  stroke-dashoffset: 124.6;
+  stroke-dasharray: 0 162.6 133 29.6;
+  transition: all 0.4s ease 0s;
+  @apply block absolute z-10
+}
+.toggleButton input + div:before, .toggleButton input + div:after {
+  content: '';
+  width: 3px;
+  height: 16px;
+  left: 50%;
+  top: 50%;
+  border-radius: 5px;
+  @apply absolute bg-black left-2/4 top-2/4
+}
+.toggleButton input + div:before {
+  transform: scale(0.3) translate(-50%, -50%) rotate(45deg);
+  animation: bounceInBefore 0.3s linear forwards 0.3s;
+  @apply opacity-0
+}
+.toggleButton input + div:after {
+  transform: scale(0.3) translate(-50%, -50%) rotate(-45deg);
+  animation: bounceInAfter 0.3s linear forwards 0.3s;
+  @apply opacity-0
+}
+.toggleButton input:checked + div svg {
+  stroke-dashoffset: 162.6;
+  stroke-dasharray: 0 162.6 28 134.6;
+  transition: all 0.4s ease 0.2s;
+}
+.toggleButton input:checked + div:before {
+  transform: scale(0.3) translate(-50%, -50%) rotate(45deg);
+  animation: bounceInBeforeRev 0.3s linear forwards 0s;
+  @apply opacity-0
+}
+.toggleButton input:checked + div:after {
+  transform: scale(0.3) translate(-50%, -50%) rotate(-45deg);
+  animation: bounceInAfterRev 0.3s linear forwards 0s;
+  @apply opacity-0
+}
+/* Animated Checkbutton END */
+
+.disabled {
+  filter: contrast(0.2);
+  @apply pointer-events-none
+}
+
 .styled-brewing-icon {
   width: 50%;
   padding: 7px 4px 0px 4px;
@@ -16,7 +94,7 @@
   cursor: pointer;
 }
 .styled-brewing-icon-active {
-  border-color: #000;
+  @apply border-black
 }
 
 .styled-save-btn {

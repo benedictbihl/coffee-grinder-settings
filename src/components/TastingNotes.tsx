@@ -39,7 +39,7 @@ const TastingNotes: React.FC<ITastingNotes> = ({ className, onCloseClick }) => {
         ></textarea>
         <button
           onClick={() => {
-            selectedCoffee && setTastingNotes(selectedCoffee.value, inputValue);
+            selectedCoffee && setTastingNotes(selectedCoffee.id, inputValue);
             onCloseClick();
           }}
           className="styled-submit-btn"

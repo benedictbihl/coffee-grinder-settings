@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Table } from "react-super-responsive-table";
+import React from "react";
 import { CoffeeListContext } from "../store/CoffeeListContext";
 
 interface IRemoveSettingPrompt {
@@ -38,7 +37,7 @@ const RemoveSettingPrompt: React.FC<IRemoveSettingPrompt> = ({ className, onClos
           </button>
           <button
             onClick={() => {
-              selectedCoffee && deleteCoffee(selectedCoffee.value);
+              selectedCoffee && deleteCoffee(selectedCoffee.id);
               onCloseClick();
             }}
             className="styled-remove-btn"

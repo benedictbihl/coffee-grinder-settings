@@ -25,7 +25,7 @@ const ResponsiveTable: React.FC<ITable> = ({ className, onCloseClick }) => {
     coffeeList.forEach((list: CoffeeList) => {
       list.options.forEach((coffee: Coffee) => {
         listJSX.push(
-          <Tr key={coffee.value}>
+          <Tr key={coffee.id}>
             <Td>{coffee.label}</Td>
             <Td>{reformatSetting(coffee.v60_setting)}</Td>
             <Td>{reformatSetting(coffee.aeropress_setting)}</Td>

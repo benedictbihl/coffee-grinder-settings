@@ -1,4 +1,5 @@
 export type Coffee = {
+  id: string,
   value: string,
   label: string,
   v60_setting: number,

@@ -19,9 +19,9 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
       next: (querySnapshot: any) => {
         let coffeesAtHome: any[] = [];
         let coffeesUnavailable: any[] = [];
-        const coffeeList = querySnapshot.docs.map((docSnapshot: any) =>
-          docSnapshot.data()
-        );
+        const coffeeList = querySnapshot.docs.map((docSnapshot: any) => {
+          return { ...docSnapshot.data(), id: docSnapshot.id };
+        });
         coffeeList.forEach((doc: Coffee) => {
           if (doc.available_at_home === true) {
             coffeesAtHome.push({
@@ -56,19 +56,19 @@ const CoffeeListProvider: React.FC<React.ReactNode> = ({ children }) => {
   }, []);
 
   const saveCoffee = (name: string) => {
-    createCoffee(name);
+    createCoffee(name, setSelectedCoffee);
   };
 
-  const deleteCoffee = (name: string) => {
-    removeCoffee(name, setSelectedCoffee);
+  const deleteCoffee = (id: string) => {
+    removeCoffee(id, setSelectedCoffee);
   };
 
-  const setCoffee = (name: string, fields: any) => {
-    updateCoffee(name, { ...fields });
+  const setCoffee = (id: string, fields: any) => {
+    updateCoffee(id, { ...fields });
   };
 
-  const setTastingNotes = (name: string, notes: string) => {
-    updateTastingNotes(name, notes);
+  const setTastingNotes = (id: string, notes: string) => {
+    updateTastingNotes(id, notes);
   };
   return (
     <CoffeeListContext.Provider
