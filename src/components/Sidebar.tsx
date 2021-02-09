@@ -13,11 +13,9 @@ const Sidebar: React.FC<ISideBar> = ({
   onSignOutClick,
   onInfoClick,
   onTableClick,
-  onRemoveClick
+  onRemoveClick,
 }) => {
-  const { selectedCoffee } = React.useContext(
-    CoffeeListContext
-  );
+  const { selectedCoffee } = React.useContext(CoffeeListContext);
 
   const isDisabled: String = selectedCoffee ? "" : "disabled";
 
@@ -25,7 +23,7 @@ const Sidebar: React.FC<ISideBar> = ({
     <div className={className}>
       <div>
         <img
-          className="cursor-pointer"
+          className="cursor-pointer w-8"
           onClick={() => onSignOutClick()}
           alt="logout"
           src="/icon/log-out.svg"
@@ -34,19 +32,19 @@ const Sidebar: React.FC<ISideBar> = ({
       <div>
         <img
           onClick={() => onRemoveClick()}
-          className={`mb-6 cursor-pointer ${isDisabled}`}
+          className={`mb-8 cursor-pointer w-8 ${isDisabled}`}
           alt="tasting notes"
           src="/icon/trash.svg"
         />
         <img
           onClick={() => onInfoClick()}
-          className={`mb-6 cursor-pointer ${isDisabled}`}
+          className={`mb-8 cursor-pointer w-8 ${isDisabled}`}
           alt="tasting notes"
           src="/icon/info.svg"
         />
         <img
           onClick={() => onTableClick()}
-          className={`cursor-pointer ${isDisabled}`}
+          className={`cursor-pointer w-8 ${isDisabled}`}
           alt="all coffees"
           src="/icon/database.svg"
         />

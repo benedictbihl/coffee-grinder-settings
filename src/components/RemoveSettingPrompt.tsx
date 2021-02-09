@@ -5,10 +5,11 @@ interface IRemoveSettingPrompt {
   className: string;
   onCloseClick: () => void;
 }
-const RemoveSettingPrompt: React.FC<IRemoveSettingPrompt> = ({ className, onCloseClick }) => {
-  const { selectedCoffee, deleteCoffee } = React.useContext(
-    CoffeeListContext
-  );
+const RemoveSettingPrompt: React.FC<IRemoveSettingPrompt> = ({
+  className,
+  onCloseClick,
+}) => {
+  const { selectedCoffee, deleteCoffee } = React.useContext(CoffeeListContext);
 
   return (
     <div className={className} style={{ backgroundColor: "rgb(0 0 0 / 65%)" }}>
@@ -22,7 +23,7 @@ const RemoveSettingPrompt: React.FC<IRemoveSettingPrompt> = ({ className, onClos
             alt="close"
           />
         </div>
-        <div className="bg-gray-100 p-3">
+        <div className="bg-gray-100 p-3 rounded-md">
           Are you sure you wish to delete the currently selected setting ?
         </div>
         <div className="flex">

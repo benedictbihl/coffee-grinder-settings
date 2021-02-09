@@ -98,22 +98,25 @@ const Main = () => {
           brewMethod === "V60" ? grindSetting_V60 : grindSetting_Aeropress
         }
       />
-      <div className="w-5/6 md:w-1/2 lg:w-1/3 items-center justify-between h-1/6 mb-2">
+      <div className="w-5/6 md:w-1/2 lg:w-1/3 items-center justify-between h-1/6 mb-4 md:mb-0">
         <Selection className="w-full mb-5" />
         <div className="w-full h-1/2 flex items-center overflow-hidden">
           <div className="w-7/12">
             <label className="toggleButton">
-              <input 
-                type="checkbox" 
+              <input
+                type="checkbox"
                 checked={availableAtHome}
                 onChange={() => setAvailableAtHome(!availableAtHome)}
               />
               <div>
                 <svg viewBox="0 0 44 44">
-                  <path d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758" transform="translate(-2.000000, -2.000000)"></path>
+                  <path
+                    d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758"
+                    transform="translate(-2.000000, -2.000000)"
+                  ></path>
                 </svg>
               </div>
-              <span className="text-black ml-3">In Stock at Home</span>
+              <span className="text-black ml-3">In Stock</span>
             </label>
           </div>
           <div className="w-5/12 flex h-full">

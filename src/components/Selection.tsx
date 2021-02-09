@@ -10,7 +10,7 @@ const groupStyles: CSSProperties = {
   fontWeight: 800,
 };
 const groupBadgeStyles: CSSProperties = {
-  backgroundColor: "blue",
+  backgroundColor: "#1d4ed8",
   color: "#fff",
   display: "inline-block",
   fontSize: 12,

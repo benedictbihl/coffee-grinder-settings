@@ -38,25 +38,27 @@ const ResponsiveTable: React.FC<ITable> = ({ className, onCloseClick }) => {
   };
   return (
     <div className={className} style={{ backgroundColor: "rgb(0 0 0 / 65%)" }}>
-      <div className="flex justify-end my-4 ">
-        <img
-          className="bg-gray-200 rounded-full cursor-pointer "
-          onClick={() => onCloseClick()}
-          src="/icon/x.svg"
-          alt="close"
-        />
+      <div className="md:w-2/3 mx-auto md:mt-10">
+        <div className="flex justify-end my-4 ">
+          <img
+            className="bg-gray-200 rounded-full cursor-pointer "
+            onClick={() => onCloseClick()}
+            src="/icon/x.svg"
+            alt="close"
+          />
+        </div>
+        <Table className="text-center bg-gray-100">
+          <Thead className="bg-gray-400">
+            <Tr>
+              <Th>Name</Th>
+              <Th>V60</Th>
+              <Th>Aeropress</Th>
+              <Th>Tasting Notes</Th>
+            </Tr>
+          </Thead>
+          <Tbody>{populateTable()}</Tbody>
+        </Table>
       </div>
-      <Table className="text-center bg-gray-100">
-        <Thead className="bg-gray-400">
-          <Tr>
-            <Th>Name</Th>
-            <Th>V60</Th>
-            <Th>Aeropress</Th>
-            <Th>Tasting Notes</Th>
-          </Tr>
-        </Thead>
-        <Tbody>{populateTable()}</Tbody>
-      </Table>
     </div>
   );
 };
