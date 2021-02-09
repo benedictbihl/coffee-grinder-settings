@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Table } from "react-super-responsive-table";
+import React from "react";
 import { CoffeeListContext } from "../store/CoffeeListContext";
 
 interface IRemoveSettingPrompt {

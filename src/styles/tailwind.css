@@ -81,6 +81,11 @@
 }
 /* Animated Checkbutton END */
 
+.disabled {
+  filter: contrast(0.2);
+  @apply pointer-events-none
+}
+
 .styled-brewing-icon {
   width: 50%;
   padding: 7px 4px 0px 4px;
