@@ -37,7 +37,7 @@ const RemoveSettingPrompt: React.FC<IRemoveSettingPrompt> = ({ className, onClos
           </button>
           <button
             onClick={() => {
-              selectedCoffee && deleteCoffee(selectedCoffee.value);
+              selectedCoffee && deleteCoffee(selectedCoffee.id);
               onCloseClick();
             }}
             className="styled-remove-btn"

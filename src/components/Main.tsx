@@ -56,7 +56,7 @@ const Main = () => {
 
   const saveChanges = () => {
     setSaveBtnVisible(false);
-    setCoffee(selectedCoffee.value, {
+    setCoffee(selectedCoffee.id, {
       v60_setting: grindSetting_V60,
       aeropress_setting: grindSetting_Aeropress,
       available_at_home: availableAtHome,
@@ -80,7 +80,6 @@ const Main = () => {
       }
     }
   }, [availableAtHome, selectedCoffee]);
-
   return (
     <>
       <button
