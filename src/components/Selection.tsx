@@ -27,11 +27,44 @@ const selectStyles: any = {
     return {
       ...styles,
       backgroundColor: "fff",
-      color: "#444",
+      color: "#000",
+      marginLeft: "1rem",
     };
   },
   //@ts-ignore
-  dropdownIndicator: (styles) => ({ ...styles, transform: "rotate(180deg)" }),
+  control: (styles) => ({
+    ...styles,
+    border: "none",
+    borderBottom: "0.125rem solid #000",
+    boxShadow: "none",
+    background: "none",
+    borderRadius: 0,
+    "&:hover": {
+      borderColor: "#000",
+    },
+  }),
+  //@ts-ignore
+  dropdownIndicator: (styles) => ({
+    ...styles,
+    transform: "rotate(180deg)",
+    color: "#000",
+  }),
+  //@ts-ignore
+  clearIndicator: (styles) => ({
+    ...styles,
+    color: "#000",
+  }),
+  //@ts-ignore
+  indicatorSeparator: (styles) => ({
+    ...styles,
+    backgroundColor: "#000",
+  }),
+  //@ts-ignore
+  menu: (styles) => ({
+    ...styles,
+    background: "hsl(0deg 0% 100% / 40%)",
+    backdropFilter: "blur(0.5625rem)",
+  }),
 };
 
 const formatGroupLabel = (data: any) => (
