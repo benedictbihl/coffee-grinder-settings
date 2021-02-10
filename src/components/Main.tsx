@@ -119,7 +119,7 @@ const Main = () => {
               <span className="text-black ml-3">In Stock</span>
             </label>
           </div>
-          <div className="w-5/12 flex h-full">
+          <div className="w-5/12 flex">
             <div
               onClick={() => setBrewMethod("V60")}
               className={`styled-brewing-icon v60 ${
