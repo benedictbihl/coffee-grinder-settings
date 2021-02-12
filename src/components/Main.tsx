@@ -119,23 +119,19 @@ const Main = () => {
               <span className="text-black ml-3">In Stock</span>
             </label>
           </div>
-          <div className="w-5/12 flex h-full">
-            <img
+          <div className="w-5/12 flex">
+            <div
               onClick={() => setBrewMethod("V60")}
-              className={`styled-brewing-icon ${
+              className={`styled-brewing-icon v60 ${
                 brewMethod === "V60" && "styled-brewing-icon-active"
               }`}
-              alt="V60 icon"
-              src="/icon/v60.svg"
-            />
-            <img
+            ></div>
+            <div
               onClick={() => setBrewMethod("Aeropress")}
-              className={`styled-brewing-icon ${
+              className={`styled-brewing-icon aero ${
                 brewMethod === "Aeropress" && "styled-brewing-icon-active"
               }`}
-              alt="Aeropress icon"
-              src="/icon/aeropress.svg"
-            />
+            ></div>
           </div>
         </div>
       </div>
