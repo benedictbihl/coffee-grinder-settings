@@ -21,7 +21,9 @@ const TastingNotes: React.FC<ITastingNotes> = ({ className, onCloseClick }) => {
     <div className={className} style={{ backgroundColor: "rgb(0 0 0 / 65%)" }}>
       <form className="flex flex-col mt-32 md:w-2/6 mx-auto">
         <div className="flex justify-between text-gray-200 text-2xl">
-          <div>{selectedCoffee && selectedCoffee.label}</div>
+          <div className="whitespace-nowrap overflow-hidden overflow-ellipsis">
+            {selectedCoffee && selectedCoffee.label}
+          </div>
           <img
             className="bg-gray-200 rounded-full cursor-pointer mb-6"
             onClick={() => onCloseClick()}

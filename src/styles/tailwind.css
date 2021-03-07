@@ -139,7 +139,7 @@
 }
 
 .styled-table {
-  @apply absolute z-50 h-screen w-screen px-4 text-gray-900;
+  @apply absolute z-50 h-screen w-screen px-4 pb-4 text-gray-900 overflow-x-auto;
 }
 
 .styled-tasting-notes {

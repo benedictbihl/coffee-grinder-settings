@@ -26,9 +26,13 @@ const selectStyles: any = {
   option: (styles) => {
     return {
       ...styles,
-      backgroundColor: "fff",
+      background: "transparent",
       color: "#000",
       marginLeft: "1rem",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      width: "90%",
+      whiteSpace: "nowrap",
     };
   },
   //@ts-ignore
@@ -64,6 +68,12 @@ const selectStyles: any = {
     ...styles,
     background: "hsl(0deg 0% 100% / 40%)",
     backdropFilter: "blur(0.5625rem)",
+    zIndex: 100,
+  }),
+  //@ts-ignore
+  group: (styles) => ({
+    ...styles,
+    overflowX: "hidden",
   }),
 };
 
