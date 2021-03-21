@@ -1,22 +1,29 @@
-# cra-template-tailwindcss-typescript
+# Coffee Grinder Settings
 
-A streamlined [Tailwind CSS](https://tailwindcss.com) template for [Create React App](https://github.com/facebook/create-react-app) in [TypeScript](https://www.typescriptlang.org/).
+I wanted to have an easy to keep track of the grind settings i use one the Fellow Ode for each specific coffee. Since we use the V60 to brew 500ml batches and an Aeropress to brew single cups, these are the 2 brewing methods you can select between. Additionally, you can save tasting notes.
 
-> This template installs and sets up [Tailwind CSS](https://tailwindcss.com) with TypeScript support.
+Right now it lives on [https://coffee-grinder-settings.web.app/](https://coffee-grinder-settings.web.app/), but the data is only accessible to my girlfriend & me. In case you want to use this, you would need to fork & host it yourself on firebase. The way the firestore rules are set up requires you to add a persons' userID after they signed in the first time for them to access the db.
 
-## Usage
+## Technologies used
+
+CRA + Tailwind + Typescript.
+
+## Installation
 
 ```bash
-npx create-react-app --template tailwindcss-typescript
+npm install # install dependencies
+
+
+npm run dev # dev mode
+npm run build # creates production ready content in build folder
 ```
 
 ## Credits
 
-This project was made possible thanks to the following projects.
+1. I set up the project using [cra-template-tailwindcss-typescript](https://github.com/dance2die/cra-template-tailwindcss-typescript)
 
-1. [GeoffSelby/cra-template-tailwindcss](https://github.com/GeoffSelby/cra-template-tailwindcss) - A streamlined Tailwind CSS template for Create React App (in JavaScript).
-2. [cra-template-typescript](https://github.com/facebook/create-react-app/tree/master/packages/cra-template-typescript) - An official TypeScript template for create-react-app.
+2. Thanks to [Leon](https://github.com/leonbechhaus) for making things pretty when i lost motivation lol.
 
 ## License
 
-MIT © [Sung M. Kim](https://sung.codes)
+[MIT](https://choosealicense.com/licenses/mit/)
